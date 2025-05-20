@@ -2,14 +2,36 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Trend
 from django.contrib import messages
 from .forms import ContactForm
-from django.db.models import Q
 from django.core.paginator import Paginator
+from django.db.models import Q, F, Value, CharField
+from django.db.models.functions import Concat
 from django.contrib.auth.models import User
 
 def home(request):
+    # Fetch published posts and trends
     posts = Post.objects.filter(published=True).order_by('-created_at')[:7]
     trends = Trend.objects.filter(published=True).order_by('-created_at')[:5]
-    trending_posts = Post.objects.filter(published=True).order_by('-created_at')[:5]
+
+    # Fetch the latest published Post and Trend
+    latest_post = Post.objects.filter(published=True).order_by('-created_at').first()
+    latest_trend = Trend.objects.filter(published=True).order_by('-created_at').first()
+
+    # Combine into trending_posts list
+    trending_posts = []
+    if latest_post:
+        trending_posts.append({
+            'id': latest_post.id,
+            'title': latest_post.title,
+            'author': latest_post.author,
+            'url': 'post_detail'
+        })
+    if latest_trend:
+        trending_posts.append({
+            'id': latest_trend.id,
+            'title': latest_trend.title,
+            'author': latest_trend.author,
+            'url': 'trend_detail'
+        })
 
     context = {
         'trends': trends,
@@ -23,7 +45,7 @@ def posts(request):
     posts = Post.objects.filter(published=True).order_by('-created_at')
 
     # Pagination
-    paginator = Paginator(posts, 6)  # Show 6 posts per page
+    paginator = Paginator(posts, 3)  # Show 6 posts per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 

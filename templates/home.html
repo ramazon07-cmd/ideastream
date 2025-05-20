@@ -125,7 +125,7 @@
                 <ul class="trending-post">
                   {% for post in trending_posts %}
                     <li>
-                      <a href="{% url 'post_detail' post.id %}">
+                      <a href="{% url post.url post.id %}">
                         <span class="number">{{ forloop.counter }}</span>
                         <h3>{{ post.title }}</h3>
                         <span class="author">{{ post.author.first_name }} {{ post.author.last_name }}</span>

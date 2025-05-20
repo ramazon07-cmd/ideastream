@@ -74,6 +74,7 @@
                 <!-- /Blog Posts Section -->
 
                 <!-- Blog Pagination Section -->
+                {% if posts.paginator.num_pages > 1 %}
                 <section id="blog-pagination" class="blog-pagination section">
                     <div class="container">
                         <div class="d-flex justify-content-center">
@@ -99,6 +100,7 @@
                         </div>
                     </div>
                 </section>
+                {% endif %}
                 <!-- /Blog Pagination Section -->
             </div>
 
