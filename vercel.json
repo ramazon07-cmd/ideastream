@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "manage.py",
+      "src": "core/asgi.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "dest": "/staticfiles/$1"
     },
     {
       "src": "/media/(.*)",
@@ -21,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "manage.py"
+      "dest": "core/asgi.py"
     }
   ]
 }
