@@ -50,7 +50,7 @@ def posts(request):
     page_obj = paginator.get_page(page_number)
 
     # Recent posts (last 5 published posts)
-    recent_posts = Post.objects.filter(published=True).order_by('-created_at')[:5]
+    recent_posts = Post.objects.filter(published=True).order_by('-created_at')[:3]
 
     # Author info (use first user; adjust as needed)
     author = User.objects.first()  # Replace with specific author logic if needed
