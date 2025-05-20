@@ -45,7 +45,7 @@ def posts(request):
     posts = Post.objects.filter(published=True).order_by('-created_at')
 
     # Pagination
-    paginator = Paginator(posts, 3)  # Show 6 posts per page
+    paginator = Paginator(posts, 4)  # Show 4 posts per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
