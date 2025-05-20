@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+
+  <!-- 🚀 Slider Section -->
+  <section id="slider" class="slider section dark-background">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "centeredSlides": true,
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "navigation": {
+              "nextEl": ".swiper-button-next",
+              "prevEl": ".swiper-button-prev"
+            }
+          }
+        </script>
+
+        <div class="swiper-wrapper">
+          {% for trend in trends %}
+            <div class="swiper-slide" style="background-image: url('{{ trend.image.url }}');">
+              <div class="content">
+                <h2><a href="{% url 'trend_detail' trend.id %}">{{ trend.title }}</a></h2>
+                <p>{{ trend.slug }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📈 Trending Category Section -->
+  <section id="trending-category" class="trending-category section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row g-5">
+
+        <!-- ⭐ Featured Post -->
+        <div class="col-lg-4">
+          {% with featured_post=posts|first %}
+            {% if featured_post %}
+              <div class="post-entry lg">
+                <a href="{% url 'post_detail' featured_post.id %}">
+                  <img src="{{ featured_post.image.url }}" alt="{{ featured_post.title }}" class="img-fluid">
+                </a>
+                <div class="post-meta">
+                  <span class="date">Blog</span>
+                  <span class="mx-1">•</span>
+                  <span>{{ featured_post.created_at|date:"M d, Y" }}</span>
+                </div>
+                <h2><a href="{% url 'post_detail' featured_post.id %}">{{ featured_post.title }}</a></h2>
+                <p class="mb-4 d-block">{{ featured_post.content|truncatewords:50 }}</p>
+                <div class="d-flex align-items-center author">
+                  <div class="photo">
+                    <img src="{% static 'img/person-1.jpg' %}" alt="{{ featured_post.author.username }}" class="img-fluid">
+                  </div>
+                  <div class="name">
+                    <h3 class="m-0 p-0">{{ featured_post.author.first_name }} {{ featured_post.author.last_name }}</h3>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endwith %}
+        </div>
+
+        <!-- 📰 Posts Grid + 🔥 Trending -->
+        <div class="col-lg-8">
+          <div class="row g-5">
+
+            <!-- Left Grid (Posts 1–3) -->
+            <div class="col-lg-4 border-start custom-border">
+              {% for post in posts|slice:"1:4" %}
+                <div class="post-entry">
+                  <a href="{% url 'post_detail' post.id %}">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+                  </a>
+                  <div class="post-meta">
+                    <span class="date">Blog</span>
+                    <span class="mx-1">•</span>
+                    <span>{{ post.created_at|date:"M d, Y" }}</span>
+                  </div>
+                  <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+                </div>
+              {% endfor %}
+            </div>
+
+            <!-- Middle Grid (Posts 4–6) -->
+            <div class="col-lg-4 border-start custom-border">
+              {% for post in posts|slice:"4:7" %}
+                <div class="post-entry">
+                  <a href="{% url 'post_detail' post.id %}">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+                  </a>
+                  <div class="post-meta">
+                    <span class="date">Blog</span>
+                    <span class="mx-1">•</span>
+                    <span>{{ post.created_at|date:"M d, Y" }}</span>
+                  </div>
+                  <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+                </div>
+              {% endfor %}
+            </div>
+
+            <!-- 🔥 Trending List -->
+            <div class="col-lg-4">
+              <div class="trending">
+                <h3>Trending</h3>
+                <ul class="trending-post">
+                  {% for post in trending_posts %}
+                    <li>
+                      <a href="{% url 'post_detail' post.id %}">
+                        <span class="number">{{ forloop.counter }}</span>
+                        <h3>{{ post.title }}</h3>
+                        <span class="author">{{ post.author.first_name }} {{ post.author.last_name }}</span>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

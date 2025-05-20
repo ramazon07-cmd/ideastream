@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main">
+
+  <!-- 🚀 Post Title & Breadcrumb -->
+  <div class="page-title">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Single Post</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="current">Single Post</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- ✨ Main Post Section -->
+      <div class="col-lg-8">
+        <section id="blog-details" class="blog-details section">
+          <article class="article">
+
+            <!-- 🖼️ Post Image -->
+            <div class="post-img">
+              <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid" />
+            </div>
+
+            <!-- 📝 Post Meta -->
+            <div class="meta-top my-3">
+              <h2 class="title">{{ post.title }}</h2>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <i class="bi bi-person"></i> {{ post.author.username }}
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi bi-clock"></i> {{ post.created_at|date:"M d, Y" }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- 🧠 Post Content -->
+            <div class="content">
+              {{ post.content|linebreaks }}
+            </div>
+
+          </article>
+        </section>
+      </div>
+
+      <!-- 👉 Sidebar -->
+      <div class="col-lg-4 sidebar">
+        <div class="widgets-container">
+          <!-- You can keep your author/search/recent/tags widgets here -->
+          <div class="search-widget widget-item">
+            <h3 class="widget-title">Search</h3>
+            <form action="">
+              <input type="text" />
+              <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
