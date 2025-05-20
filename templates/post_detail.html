@@ -56,9 +56,12 @@
           <!-- You can keep your author/search/recent/tags widgets here -->
           <div class="search-widget widget-item">
             <h3 class="widget-title">Search</h3>
-            <form action="">
-              <input type="text" />
-              <button type="submit"><i class="bi bi-search"></i></button>
+            <form action="{% url 'search_posts' %}">
+                {% csrf_token %}
+                <input type="text" name="q" />
+                <button type="submit" title="Search">
+                    <i class="bi bi-search"></i>
+                </button>
             </form>
           </div>
         </div>

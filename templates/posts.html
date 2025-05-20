@@ -110,10 +110,18 @@
                             <img src="{% static 'img/person-1.jpg' %}" class="rounded-circle flex-shrink-0" alt="{{ author.username }}" />
                             <h4>{{ author.username }}</h4>
                             <div class="social-links">
-                                <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
-                                <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
-                                <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
-                                <a href="https://linkedin.com/#"><i class="biu bi-linkedin"></i></a>
+                                <a href="https://t.me/ramazonLider" class="telegram">
+                                    <i class="bi bi-telegram"></i>
+                                </a>
+                                <a href="https://www.x.com/ErgashevRa2621" class="twitter">
+                                    <i class="bi bi-twitter-x"></i>
+                                </a>
+                                <a href="https://www.instagram.com/ramazon08_cmd" class="instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@RamazonErgashev-k6s" class="youtube">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
                             </div>
                             <p>Author biography coming soon...</p>
                         </div>
@@ -124,6 +132,7 @@
                     <div class="search-widget widget-item">
                         <h3 class="widget-title">Search</h3>
                         <form action="{% url 'search_posts' %}">
+                            {% csrf_token %}
                             <input type="text" name="q" />
                             <button type="submit" title="Search">
                                 <i class="bi bi-search"></i>
