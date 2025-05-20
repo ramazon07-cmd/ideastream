@@ -11,8 +11,6 @@ env/
 venv/
 ENV/
 *.sqlite3
-media/
-staticfiles/
 
 # IDE and editor files
 .idea/
@@ -26,3 +24,4 @@ staticfiles/
 # Logs and temporary files
 *.log
 *.pot
+.vercel
