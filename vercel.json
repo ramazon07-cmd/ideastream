@@ -1,10 +1,6 @@
 {
-  "version": 2,
   "builds": [
-    {
-      "src": "core/asgi.py",
-      "use": "@vercel/python"
-    }
+    { "src": "core/asgi.py", "use": "@vercel/python" }
   ],
   "routes": [
     {
