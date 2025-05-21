@@ -1,27 +1,19 @@
-# Environment variables
+__pycache__/
+*.pyc
+*.pyo
+
+venv/
+env/
+.venv/
+
 .env
 
-# Python/Django specific
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-ENV/
-*.sqlite3
+db.sqlite3
+/media/
+/static/
 
-# IDE and editor files
-.idea/
 .vscode/
-*.sublime-project
-*.sublime-workspace
+.idea/
 
-# macOS
 .DS_Store
-
-# Logs and temporary files
-*.log
-*.pot
 .vercel
