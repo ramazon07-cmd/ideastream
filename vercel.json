@@ -1,5 +1,12 @@
 {
-  "buildCommand": "python manage.py collectstatic --noinput",
+  "builds": [
+    {
+      "src": "core/asgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
+    }
+  ],
+  "buildCommand": "python3 manage.py collectstatic --noinput",
   "outputDirectory": "staticfiles",
   "routes": [
     {
