@@ -3,8 +3,6 @@
 🎯 **MusePad** — bu zamonaviy, minimalist blog platformasi bo‘lib, foydalanuvchilarga maqola yozish, o‘chirish, tahrirlash va qidirish imkonini beradi.  
 Django asosida yaratilgan, Bootstrap dizayn, SCSS bilan responsive frontend va testlar bilan mustahkam backend asosida ishlab chiqilgan.
 
-![MusePad Preview](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTgxZGI0bW9rdWx4Y3psODN5Y3k1Ym9ycnN2aHl0dWoxN3BuOHN1bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JYsWjlQzsn2xeJjlGL/giphy.gif)
-
 ---
 
 ## 🚀 Funktsiyalar
@@ -39,19 +37,6 @@ Django asosida yaratilgan, Bootstrap dizayn, SCSS bilan responsive frontend va t
 | 🧾 Ma'lumotlar | SQLite3 (dev), Media files     |
 | 🧪 Test      | `pytest`, `pytest-django`     |
 | ⚙️ Tools     | Git, GitHub, Vercel-ready     |
-
----
-
-## 🎬 GIF Preview
-
-### 🏠 Home + Pagination
-![Home Page](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXZ1bTJ3N2poaGhzNmc0Z2I2aHdkOXRqMHluZnhuaTJmdmlrMXF3YSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/buMa3dtuay7HRZrDMz/giphy.gif)
-
-### 🔍 Post Search
-![Search](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZ2N2FvM2tqbWhidTdqM3dhcHV5ZWs0aWgyMmlhMnF2eDRwbmx0cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XZro45coHiKMvV1IQI/giphy.gif)
-
-### 📄 Post Detail
-![Detail](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExemN4amF4Z3BtNGFnNGE0YWg1eGVzdGxlbTY2dGpudGV2ZWYxZGV1eiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3mPSZJHD59h5EC0uzk/giphy.gif)
 
 ---
 
