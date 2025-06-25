@@ -15,7 +15,6 @@ Django asosida yaratilgan, Bootstrap dizayn, SCSS bilan responsive frontend va t
 - 📄 Har bir post uchun to‘liq sahifa (detail)
 - ℹ️ About sahifasi
 - 📬 Kontakt formasi (xabar yuborish)
-- 📸 Rasm yuklash (media orqali)
 
 ---
 
@@ -80,42 +79,3 @@ Django asosida yaratilgan, Bootstrap dizayn, SCSS bilan responsive frontend va t
 ├── manage.py
 ├── requirements.txt
 └── pytest.ini
-⚙️ O‘rnatish (Local Development)
-bash
-Copy
-Edit
-git clone https://github.com/USERNAME/musepad.git
-cd musepad
-python -m venv env
-source env/bin/activate  # Windows: env\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-📎 Kirish: http://127.0.0.1:8000/
-
-🧪 Testlarni ishga tushurish
-bash
-Copy
-Edit
-pytest
-✅ tests/ papkasi: test_models.py, test_views.py, test_forms.py — pytest-django bilan test qilingan
-
-💡 Roadmap (Kelajak Rejalari)
-🔐 Login / Register sahifalari
-
-💬 Comment System
-
-🖼️ Image Preview va Compression
-
-🌐 I18n (Ko‘p til qo‘llab-quvvatlash)
-
-📊 Post statistikasi
-
-👨‍💻 Muallif
-Ramazon — 15 yoshli Full-Stack Developer 👨‍💻
-🔗 GitHub: @ramazon07-cmd
-📨 Telegram: @your_username
-
-📜 Litsenziya
-MIT License © 2025 Ramazon
-
